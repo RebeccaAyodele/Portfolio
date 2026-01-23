@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useEffect, useState } from "react";
 
 export function SkillsSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.3 },
-    )
+    );
 
-    const element = document.getElementById("skills")
-    if (element) observer.observe(element)
+    const element = document.getElementById("skills");
+    if (element) observer.observe(element);
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const technicalSkills = [
     "React/Next.js",
@@ -29,14 +29,13 @@ export function SkillsSection() {
     "JavaScript (ES6+)",
     "HTML5 & CSS3",
     "Tailwind CSS",
-    "Sass/SCSS",
+    "LLM Integration",
     "Node.js",
     "Git & GitHub",
     "Responsive Design",
     "REST APIs",
-    "GraphQL",
     "Redux/Zustand",
-  ]
+  ];
 
   const tools = [
     "VS Code",
@@ -46,12 +45,10 @@ export function SkillsSection() {
     "Netlify",
     "Firebase",
     "MongoDB",
-    "PostgreSQL",
     "Postman",
     "Chrome DevTools",
-    "ESLint",
     "Prettier",
-  ]
+  ];
 
   const softSkills = [
     "Problem Solving",
@@ -64,15 +61,18 @@ export function SkillsSection() {
     "Critical Thinking",
     "Creativity",
     "User Empathy",
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Skills & Expertise</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+            Skills & Expertise
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills, tools, and technologies I work with.
+            A comprehensive overview of my technical skills, tools, and
+            technologies I work with.
           </p>
         </div>
 
@@ -80,7 +80,9 @@ export function SkillsSection() {
           {/* Technical Skills */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl text-primary">Technical Skills</CardTitle>
+              <CardTitle className="text-2xl text-primary">
+                Technical Skills
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
@@ -101,7 +103,9 @@ export function SkillsSection() {
           {/* Tools & Technologies */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl text-primary">Tools & Technologies</CardTitle>
+              <CardTitle className="text-2xl text-primary">
+                Tools & Technologies
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2 mb-8">
@@ -122,7 +126,9 @@ export function SkillsSection() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-primary text-center">Soft Skills</CardTitle>
+            <CardTitle className="text-2xl text-primary text-center">
+              Soft Skills
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
@@ -131,7 +137,9 @@ export function SkillsSection() {
                   key={skill}
                   variant="outline"
                   className={`transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                  style={{ animationDelay: `${(technicalSkills.length + tools.length + index) * 0.1}s` }}
+                  style={{
+                    animationDelay: `${(technicalSkills.length + tools.length + index) * 0.1}s`,
+                  }}
                 >
                   {skill}
                 </Badge>
@@ -141,5 +149,5 @@ export function SkillsSection() {
         </Card>
       </div>
     </section>
-  )
+  );
 }
