@@ -88,7 +88,7 @@ export function AboutSection() {
                     My Journey
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    I’m Rebecca, a Computer Science and Mathematics student at
+                    I’m Rebecca, a Computer Science With Mathematics student at
                     Obafemi Awolowo University, passionate about creating web
                     experiences that are both functional and engaging. I love
                     turning ideas into interactive interfaces that users enjoy.
@@ -109,7 +109,7 @@ export function AboutSection() {
                 </div>
                 <div className="flex justify-center">
                   <div className="relative">
-                    <div className="w-64 h-64 bg-gradient-to-br from-accent/20 via-primary/10 to-secondary/20 rounded-full flex items-center justify-center">
+                    <div className="w-64 h-64 bg-linear-to-br from-accent/20 via-primary/10 to-secondary/20 rounded-full flex items-center justify-center">
                       <img
                         src="/developer-potrait.png"
                         alt="Rebecca Ayodele"
