@@ -11,7 +11,7 @@ export function ProjectsSection() {
       title: "CareerAI",
       description:
         "A comprehensive career development platform with three powerful tools: (1) Skill Analyzer - identifies gaps between your current abilities and target job requirements, (2) Interview Simulator - practices real interview scenarios with AI feedback in practice or strict mock modes, and (3) Resume Generator - creates tailored resumes with AI suggestions. Perfect for job seekers preparing for their next opportunity.",
-      image: "/AICAREER.png",
+      image: "/CareerAI.png",
       technologies: [
         "Next.js 16",
         "React",
