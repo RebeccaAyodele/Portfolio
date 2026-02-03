@@ -8,20 +8,22 @@ import { ExternalLink, Github } from "lucide-react";
 export function ProjectsSection() {
   const projects = [
     {
-      title: "AI Career App",
+      title: "CareerAI",
       description:
-        "An AI app that helps user generate resume, practice interviews and analyse their skills",
-      image: "/TaskFlowImage.png",
+        "A comprehensive career development platform with three powerful tools: (1) Skill Analyzer - identifies gaps between your current abilities and target job requirements, (2) Interview Simulator - practices real interview scenarios with AI feedback in practice or strict mock modes, and (3) Resume Generator - creates tailored resumes with AI suggestions. Perfect for job seekers preparing for their next opportunity.",
+      image: "/AICAREER.png",
       technologies: [
-        "Nextjs",
+        "Next.js 16",
+        "React",
         "Typescript",
         "Tailwind CSS",
-        "APIs",
-        "Server",
-        "LLM",
+        "Framer Motion",
+        "OpenRouter API",
+        "Nemotron AI",
+        "REST API"
       ],
-      liveUrl: "https://kanban-board-six-eta.vercel.app/",
-      githubUrl: "https://github.com/RebeccaAyodele/Kanban-Board",
+      liveUrl: "https://ai-career-app-five.vercel.app/",
+      githubUrl: "https://github.com/RebeccaAyodele/",
       featured: true,
     },
     {
