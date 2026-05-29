@@ -4,77 +4,43 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette for modern portfolio design */
-  --background: #ffffff;
-  --foreground: #1f2937;
-  --card: #f8fafc;
-  --card-foreground: #374151;
-  --popover: #ffffff;
-  --popover-foreground: #1f2937;
-  --primary: #374151;
-  --primary-foreground: #ffffff;
-  --secondary: #6366f1;
-  --secondary-foreground: #ffffff;
-  --muted: #f8fafc;
-  --muted-foreground: #4b5563;
-  --accent: #6366f1;
-  --accent-foreground: #ffffff;
-  --destructive: #d97706;
-  --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #f8fafc;
-  --ring: rgba(99, 102, 241, 0.5);
-  --chart-1: #6366f1;
-  --chart-2: #4b5563;
-  --chart-3: #d97706;
-  --chart-4: #a16207;
-  --chart-5: #fefce8;
-  --radius: 0.5rem;
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #374151;
-  --sidebar-primary: #ffffff;
-  --sidebar-primary-foreground: #1f2937;
-  --sidebar-accent: #6366f1;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: rgba(99, 102, 241, 0.5);
-}
-
-.dark {
-  /* Dark mode colors for professional portfolio */
-  --background: #0f172a;
+  /* Dark mode only - neutral #111111 color scheme */
+  --background: #111111;
   --foreground: #f1f5f9;
-  --card: #1e293b;
+  --card: #1a1a1a;
   --card-foreground: #f1f5f9;
-  --popover: #1e293b;
+  --popover: #1a1a1a;
   --popover-foreground: #f1f5f9;
   --primary: #f1f5f9;
-  --primary-foreground: #0f172a;
-  --secondary: #6366f1;
-  --secondary-foreground: #ffffff;
-  --muted: #1e293b;
+  --primary-foreground: #111111;
+  --secondary: #AAFF00;
+  --secondary-foreground: #000000;
+  --muted: #1a1a1a;
   --muted-foreground: #94a3b8;
-  --accent: #6366f1;
+  --accent: #AAFF00;
   --accent-foreground: #ffffff;
   --destructive: #d97706;
   --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: rgba(99, 102, 241, 0.5);
-  --chart-1: #6366f1;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: rgba(170, 255, 0, 0.4);
+  --chart-1: #AAFF00;
   --chart-2: #94a3b8;
   --chart-3: #d97706;
   --chart-4: #a16207;
-  --chart-5: #1e293b;
-  --sidebar: #1e293b;
+  --chart-5: #1a1a1a;
+  --radius: 0.5rem;
+  --sidebar: #1a1a1a;
   --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #0f172a;
+  --sidebar-primary: #111111;
   --sidebar-primary-foreground: #f1f5f9;
-  --sidebar-accent: #6366f1;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #334155;
-  --sidebar-ring: rgba(99, 102, 241, 0.5);
+  --sidebar-accent: #AAFF00;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: rgba(170, 255, 0, 0.4);
 }
+
+/* Dark mode is now the only mode - no light mode variant */
 
 @theme inline {
   --color-background: var(--background);
@@ -129,44 +95,36 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
+    animation: fadeIn 0.8s ease-out;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
+    animation: slideInLeft 0.9s ease-out;
   }
 
   .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: none;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
+      letter-spacing: -0.05em;
     }
     to {
       opacity: 1;
+      letter-spacing: 0;
     }
   }
 
-  @keyframes slideUp {
+  @keyframes slideInLeft {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateX(-20px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
+      transform: translateX(0);
     }
   }
 }

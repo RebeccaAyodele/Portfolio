@@ -8,6 +8,24 @@ import { ExternalLink, Github } from "lucide-react";
 export function ProjectsSection() {
   const projects = [
     {
+      title: "Trace",
+      description:
+        "Trace turns invisible economic activity into a verifiable digital identity, giving traders, gig workers, and job seekers access to the financial services they've always deserved.",
+      image: "/trace.png",
+      technologies: [
+        "Next.js 16",
+        "React",
+        "Typescript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "OpenRouter API",
+        "REST API"
+      ],
+      liveUrl: "https://ai-career-app-five.vercel.app/",
+      githubUrl: "https://github.com/PraiseKeyz/Trace/",
+      featured: true,
+    },
+    {
       title: "CareerAI",
       description:
         "Complete job prep platform powered by AI. Identify skill gaps with Skill Analyzer, practice real interview scenarios with Interview Simulator (choose between coaching mode or strict mock interviews), and create polished resumes with Resume Generator",
@@ -74,16 +92,7 @@ export function ProjectsSection() {
       githubUrl: "https://github.com/RebeccaAyodele/hulu_landing_page",
       featured: true,
     },
-    {
-      title: "Movie App",
-      description:
-        "A modern, responsive portfolio website showcasing projects and skills with smooth animations and dark mode support.",
-      image: "/Movie-flix.png",
-      technologies: ["Html", "CSS", "JavaScript", "TMDB"],
-      liveUrl: "https://movie-app-orpin-zeta.vercel.app/",
-      githubUrl: "https://github.com/RebeccaAyodele/Movie-app",
-      featured: true,
-    },
+    
     {
       title: "Social Media Dashboard",
       description:
@@ -116,7 +125,7 @@ export function ProjectsSection() {
   const otherProjects = projects.filter((project) => project.featured);
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
@@ -178,7 +187,7 @@ export function ProjectsSection() {
             {otherProjects.map((project, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow duration-300 group"
+                className="hover:border-accent transition-all duration-300 group"
               >
                 <div className="relative overflow-hidden">
                   <img

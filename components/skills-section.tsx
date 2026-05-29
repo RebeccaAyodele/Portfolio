@@ -50,21 +50,8 @@ export function SkillsSection() {
     "Prettier",
   ];
 
-  const softSkills = [
-    "Problem Solving",
-    "Team Collaboration",
-    "Communication",
-    "Time Management",
-    "Attention to Detail",
-    "Continuous Learning",
-    "Adaptability",
-    "Critical Thinking",
-    "Creativity",
-    "User Empathy",
-  ];
-
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
@@ -123,30 +110,6 @@ export function SkillsSection() {
             </CardContent>
           </Card>
         </div>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary text-center">
-              Soft Skills
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {softSkills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="outline"
-                  className={`transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-                  style={{
-                    animationDelay: `${(technicalSkills.length + tools.length + index) * 0.1}s`,
-                  }}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );

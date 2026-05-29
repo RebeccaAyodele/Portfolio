@@ -85,12 +85,12 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-24">
       {/* Toast Notification */}
       {toast.type && (
         <div className="fixed top-6 right-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
           <div
-            className={`rounded-lg shadow-lg p-4 flex items-center gap-3 ${
+            className={`rounded-lg border p-4 flex items-center gap-3 ${
               toast.type === "success"
                 ? "bg-green-50 border border-green-200"
                 : "bg-red-50 border border-red-200"
@@ -138,7 +138,7 @@ export function ContactSection() {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="hover:shadow-md transition-shadow duration-300"
+                className="hover:border-accent transition-all duration-300"
               >
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">

@@ -86,9 +86,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground flex items-center justify-center">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by Becca ©{" "}
-            {new Date().getFullYear()}
+          <p className="text-muted-foreground flex items-center justify-center gap-1">
+            Made with{" "}
+            <Heart className="w-4 h-4 text-[#aaff00] fill-[#aaff00]" />{" "}
+            by Becca © {new Date().getFullYear()}
           </p>
         </div>
       </div>

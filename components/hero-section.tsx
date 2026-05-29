@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Instagram, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function HeroSection() {
@@ -33,94 +34,103 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background py-12 sm:py-0"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/50 to-background" />
+      {/* Geometric accent shapes - responsive sizes */}
+      <div className="absolute top-4 sm:top-10 left-4 sm:left-12 w-16 sm:w-32 h-16 sm:h-32 bg-accent opacity-20 rounded-3xl transform -rotate-12 hidden sm:block" />
+      <div className="absolute -bottom-12 sm:bottom-20 -left-12 sm:left-0 w-24 sm:w-48 h-24 sm:h-48 bg-accent opacity-15 rounded-full" />
+      <div className="absolute top-1/3 sm:top-1/4 -right-20 sm:right-0 w-40 sm:w-96 h-40 sm:h-96 bg-accent opacity-10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 sm:bottom-0 right-0 sm:right-20 w-32 sm:w-64 h-32 sm:h-64 bg-accent opacity-10 transform rotate-45 hidden sm:block" />
 
-      {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full animate-float" />
-      <div
-        className="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full animate-float"
-        style={{ animationDelay: "1s" }}
-      />
-      <div
-        className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-float"
-        style={{ animationDelay: "2s" }}
-      />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:mt-28 mt-20 lg:px-8 relative z-10">
-        <div className="text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+          {/* Left content */}
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? "animate-slide-up" : "opacity-0"
+            className={`transition-all duration-1000 order-first lg:order-first text-center sm:text-left ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary mb-6">
-              Hi, I'm <span className="text-accent">Rebecca Ayodele</span>
+            {/* Heading */}
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
+              <span className="block text-foreground">Hi, I'm</span>
+              <span className="block">
+                <span className="text-foreground">Rebecca</span>{" "}
+                <span className="text-accent">Ayodele</span>
+              </span>
             </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8">
-              Frontend Developer
+
+            {/* Description */}
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-md leading-relaxed">
+              Frontend engineer by craft, builder by nature. I make things that connect with people.
             </p>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Crafting engaging user experiences with modern web technologies.
-              Passionate about clean code, beautiful design, and innovative
-              solutions.
-            </p>
+
+            {/* Image - Mobile only, positioned before social links */}
+            <div className="relative rounded-2xl sm:rounded-3xl bg-none overflow-hidden border-2 sm:border-accent/50 border-transparent mb-8 sm:mb-12 sm:hidden">
+              <Image
+                src="/developer-potrait.png"
+                alt="Rebecca Ayodele"
+                width={500}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
+
+            {/* Social Links */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
+              <div className="flex gap-3 sm:gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-card border border-accent/30 flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 transform hover:scale-110"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 sm:w-5 h-4 sm:h-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="mb-8 sm:mb-12 flex justify-center sm:justify-start">
+              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-accent text-black hover:bg-accent/90 w-4/5 sm:w-auto" asChild>
+                <a href="#contact">Get In Touch</a>
+              </Button>
+            </div>
           </div>
 
-          {/* Social Links */}
+          {/* Right image with accent frame */}
           <div
-            className={`flex justify-center space-x-6 mb-12 transition-all duration-1000 delay-300 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
+            className={`relative hidden md:block transition-all duration-1000 delay-300 mt-8 sm:mt-0 order-last lg:order-last ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             }`}
           >
-            {socialLinks.map((social, index) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110 group"
-                aria-label={social.label}
-              >
-                <social.icon className="w-6 h-6" />
-              </a>
-            ))}
-          </div>
+            {/* Accent geometric background */}
+            <div className="hidden sm:block absolute -inset-6 bg-accent opacity-20 rounded-3xl transform -rotate-3" />
+            <div className="hidden sm:block absolute inset-0 bg-accent opacity-10 rounded-3xl" />
 
-          {/* CTA Buttons */}
-          <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-1000 delay-500 ${
-              isVisible ? "animate-slide-up" : "opacity-0"
-            }`}
-          >
-            <Button size="lg" className="text-lg px-8 py-3" asChild>
-              <a href="#projects">View My Work</a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 py-3 bg-transparent"
-              asChild
-            >
-              <a href="#contact">Get In Touch</a>
-            </Button>
-          </div>
+            {/* Image container */}
+            <div className="relative rounded-2xl sm:rounded-3xl bg-none overflow-hidden border-2 sm:border-accent/50 border-transparent">
+              <Image
+                src="/developer-potrait.png"
+                alt="Rebecca Ayodele"
+                width={500}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
 
-          {/* Scroll indicator */}
-          <div
-            className={`transition-all duration-1000 delay-700 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-          >
-            <a
-              href="#about"
-              className="inline-flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
-            >
-              <span className="text-sm mb-2">Scroll to explore</span>
-              <ArrowDown className="w-5 h-5 animate-bounce" />
-            </a>
+            {/* Floating accent circle - responsive position */}
+            <div className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 w-20 sm:w-32 h-20 sm:h-32 border-2 border-accent rounded-full flex items-center justify-center bg-background/50 backdrop-blur-sm">
+              <div className="text-center">
+                <div className="text-lg sm:text-2xl font-bold text-accent mb-0 sm:mb-1">15+</div>
+                <div className="text-xs text-muted-foreground">Projects</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
