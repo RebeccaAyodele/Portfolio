@@ -94,9 +94,12 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="mb-8 sm:mb-12 flex justify-center sm:justify-start">
-              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-accent text-black hover:bg-accent/90 w-4/5 sm:w-auto" asChild>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-accent text-black hover:bg-accent/90" asChild>
+                <a href="#projects">View My Work</a>
+              </Button>
+              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white text-black border-2 border-white hover:bg-white/90 hover:border-white/90" asChild>
                 <a href="#contact">Get In Touch</a>
               </Button>
             </div>
